@@ -1,0 +1,22 @@
+{
+    "name": "ilies/noob_mvc",
+    "description": "My experimental custom php mvc framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "medilies",
+            "email": "medilies.contact@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+      "ext-pdo": "*",
+      "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "App/"
+        }
+    }
+}

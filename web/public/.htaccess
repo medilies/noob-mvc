@@ -1,0 +1,17 @@
+#
+# - /public can be ommited from url's path's start
+# - Format all what's written after "public" as GET request query url param
+#
+
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+
+  RewriteBase /public
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+
+</IfModule>

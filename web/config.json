@@ -1,0 +1,6 @@
+{
+    "default_url_controller": "pages",
+    "default_url_method": "index",
+    "app_title": "Noob MVC",
+    "default_lang": "en"
+}

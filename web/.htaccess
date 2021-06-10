@@ -1,0 +1,12 @@
+#
+# Hide all folders except public 
+#   by prepending public to url's path
+#
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteRule ^$ public/ [L]
+  RewriteRule (.*) public/$1 [L]
+  
+</IfModule>

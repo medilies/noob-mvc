@@ -1,0 +1,4 @@
+/db/backups
+/web/logs/*
+/web/vendor/*
+/web/.idea*
