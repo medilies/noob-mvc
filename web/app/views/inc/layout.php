@@ -14,8 +14,6 @@
         <?php endforeach;?>
     <?php endif;?>
 
-    <link rel="stylesheet" href="/css/fontawesome_free_5.13.0_we_all.min.css">
-
     <?php if (!empty($data['title'])): ?>
         <title> <?=APP_NAME . ' | ' . $data['title']?>  </title>
     <?php else: ?>

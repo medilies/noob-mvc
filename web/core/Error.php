@@ -28,12 +28,10 @@ class Error
     /**
      * Exception handler.
      *
-     * @param Exception $exception The exception
-     *
      * @return void
      * @throws Exception
      */
-    public static function exceptionHandler(Exception $exception)
+    public static function exceptionHandler($exception)
     {
         $log = WEB_ROOT . '/logs/' . date('Y-m-d') . '.txt';
         ini_set('error_log', $log);

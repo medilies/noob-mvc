@@ -1,6 +1,18 @@
 {
+    "app_title": "Noob MVC",
+    "default_lang": "en",
+    "timezone": "Africa/Algiers",
     "default_url_controller": "pages",
     "default_url_method": "index",
-    "app_title": "Noob MVC",
-    "default_lang": "en"
+    "db": {
+        "db_pdo_driver": "mysql",
+        "fallback_db_server": "localhost",
+        "fallback_db_name": "noob_mvc",
+        "fallback_db_port": "3306",
+        "fallback_db_username": "root",
+        "fallback_db_pass": "root",
+        "attr_persistent": false,
+        "attr_emulate_prepares:": false,
+        "attr_stringify_fetches": false
+    }
 }

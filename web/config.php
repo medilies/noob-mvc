@@ -12,27 +12,30 @@ set_exception_handler('Core\\Error::exceptionHandler');
 
 define('SITE_BASE_URL', get_site_base_url());
 
-date_default_timezone_set(Core\Utility::getenv('TZ', 'Africa/Algiers'));
-
-// -----------------
-
-// DB: in case of not using env_var or secret
-const FALLBACK_DB_SERVER = 'localhost';
-const FALLBACK_DB_NAME = 'noob_mvc';
-const FALLBACK_DB_USERNAME = 'root';
-const FALLBACK_DB_PASS = 'root';
-
 // -----------------
 
 define('CONFIG', get_config());
 
+date_default_timezone_set(Core\Utility::getenv('TZ', CONFIG['timezone']));
+
+// URL
+const DEFAULT_URL_CONTROLLER = CONFIG['default_url_controller'];
+const DEFAULT_URL_METHOD = CONFIG['default_url_method'];
+
+// DB
+const DB_PDO_DRIVER = CONFIG['db']['db_driver'] ?? 'mysql'; // or 'pgsql'
+const FALLBACK_DB_SERVER = CONFIG['db']['fallback_db_server'] ?? 'localhost';
+const FALLBACK_DB_NAME = CONFIG['db']['fallback_db_name'] ?? 'db';
+const FALLBACK_DB_PORT = CONFIG['db']['fallback_db_port'] ?? 3306;
+const FALLBACK_DB_USERNAME = CONFIG['db']['fallback_db_username'] ?? 'root';
+const FALLBACK_DB_PASS = CONFIG['db']['fallback_db_pass'] ?? '';
+const ATTR_PERSISTENT = CONFIG['db']['attr_persistent'] ?? false;
+const ATTR_EMULATE_PREPARES = CONFIG['db']['attr_emulate_prepares'] ?? true;
+const ATTR_STRINGIFY_FETCHES = CONFIG['db']['attr_stringify_fetches'] ?? true;
+
 // SEO
 const DEFAULT_LANG = CONFIG['default_lang'];
 const APP_NAME = CONFIG['app_title'];
-
-// formatted as "controller/method" + every controller MUST have an index() method
-const DEFAULT_URL_CONTROLLER = CONFIG['default_url_controller'];
-const DEFAULT_URL_METHOD = CONFIG['default_url_method'];
 
 function get_config()
 {

@@ -33,7 +33,7 @@ class Utility
         $secret_file = "/run/secrets/" . strtoupper($env);
         $env_var = strtoupper($env);
 
-        if (file_exists($secret_file)) {
+        if (realpath($secret_file) && file_exists($secret_file)) {
             return file_get_contents($secret_file);
 
         } else if ($val = getenv($env_var)) {

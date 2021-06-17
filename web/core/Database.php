@@ -22,9 +22,12 @@ class Database
      */
     protected function connection(string $user_name, string $user_password): PDO
     {
+        $pdo_driver = DB_PDO_DRIVER;
         $host_name = Utility::getenv('DB_SERVER', FALLBACK_DB_SERVER);
         $db_name = Utility::getenv('DB_NAME', FALLBACK_DB_NAME);
-        $dsn = "mysql:host=$host_name;dbname=$db_name";
+        $db_port = Utility::getenv('DB_PORT', FALLBACK_DB_PORT);
+
+        $dsn = "$pdo_driver:host=$host_name;port=$db_port;dbname=$db_name";
 
         try {
 
@@ -32,9 +35,9 @@ class Database
 
             $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $cnx->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            $cnx->setAttribute(PDO::ATTR_PERSISTENT, false);
-            $cnx->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            $cnx->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
+            $cnx->setAttribute(PDO::ATTR_PERSISTENT, ATTR_PERSISTENT);
+            $cnx->setAttribute(PDO::ATTR_EMULATE_PREPARES, ATTR_EMULATE_PREPARES);
+            $cnx->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, ATTR_STRINGIFY_FETCHES);
 
             return $cnx;
 
