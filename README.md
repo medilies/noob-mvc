@@ -140,6 +140,7 @@ class Pages extends Core\Controller
             'title' => 'Home',
             'stylesheets_array' => [],
             'scripts_array' => [],
+            'other_data' => null
         ];
         // echo the HTML page
         \Core\View::render('/pages/home.php', $data);
@@ -180,7 +181,7 @@ class Pages_model extends Core\Database
 
 ### Views
 
-First and as a best practice it is recommended to the head and the footer of all pages in separate files and include them in pages files.
+First and as a best practice it is recommended to put the head/footer of all pages in separate files and include them in pages files.
 The framework proposes the following way of refactoring the header and the footer in `/web/App/Views/inc/layout.php`
 
 ```php
@@ -243,6 +244,15 @@ The page Home main body goes here
 
 ### Access control
 
-**EXTRA** mind customising `/web/App/Helpers/Access_control.php` and call it method at the beggining of controllers methods
+**EXTRA:** mind customising `/web/App/Helpers/Access_control.php` and call its methods at the beggining of the controllers methods.
 
 ### Add your own classes
+
+Feel free to add folders and classes files in the `/App` folder just spicify the correct namespace for your new classes
+
+### Credit
+
+The realisation of this project is highly influenced by what I learned from these two courses
+
+- https://www.udemy.com/course/php-mvc-from-scratch/
+- https://www.udemy.com/course/object-oriented-php-mvc/
