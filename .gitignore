@@ -3,5 +3,5 @@
 /web/vendor/*
 /web/.idea*
 .gitignore
-/web/public/css/fontawesome_free_5.13.0_we_all.min.css
-/web/public/assets/fonts/fontawesome_free_5.13.0_web
+/web/public/css/fontawesome_free*
+/web/public/assets/fonts*
